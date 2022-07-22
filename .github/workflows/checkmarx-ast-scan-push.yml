@@ -13,7 +13,7 @@ jobs:
       - name: Checkmarx AST CLI Action
         uses: checkmarx/ast-github-action@main #Github Action version
         with:
-          additional_params: --threshold sast-high=1
+          additional_params: --threshold sast-high=2
           base_uri: https://anz.ast.checkmarx.net/
           cx_tenant: cx_ps_apac_test_james_bostock
           cx_client_id: ${{ secrets.CX_CLIENT_ID }}
