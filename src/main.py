@@ -3,12 +3,8 @@ import sys
 import xml.sax
 
 # High: Code_Injection
-@app.route('/execute')
-def execute_user_code_unsafe(): 
-    user_code = request.args.get('code')
-	result = eval(user_code)
-	
-	return result['value']
+path = sys.stdin.readline()
+eval(path)
 
 # High: OS_Access_Violation
 path = sys.stdin.readline()[:-1]
