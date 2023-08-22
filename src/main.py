@@ -2,13 +2,10 @@ import os
 import sys
 import xml.sax
 
-# High: Code_Injection
-path = sys.stdin.readline()
-eval(path)
-
 # High: OS_Access_Violation
 path = sys.stdin.readline()[:-1]
 os.remove(path)
+os.rmdir(path)
 
 # Medium
 class TestHandler(xml.sax.ContentHandler):
