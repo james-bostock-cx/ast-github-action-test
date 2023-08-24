@@ -1,3 +1,4 @@
+# A trivial Python script
 import os
 import sys
 import xml.sax
