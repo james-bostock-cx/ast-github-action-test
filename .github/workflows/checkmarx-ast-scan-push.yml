@@ -14,7 +14,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3.5.2
       - name: Checkmarx AST CLI Action
-        uses: checkmarx/ast-github-action@2.0.18
+        uses: checkmarx/ast-github-action@2.0.20
         with:
           additional_params: --report-format sarif
           base_uri: https://anz.ast.checkmarx.net/
