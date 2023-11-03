@@ -1,3 +1,4 @@
+# A trivial Python script
 import os
 import sys
 import xml.sax
@@ -7,6 +8,7 @@ import xml.sax
 # High: OS_Access_Violation
 path = sys.stdin.readline()[:-1]
 os.remove(path)
+os.unlink(path)
 
 # Medium
 class TestHandler(xml.sax.ContentHandler):
