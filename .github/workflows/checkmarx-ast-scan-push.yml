@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: james-bostock-cx/test-js-action@v0.1.0
+        uses: james-bostock-cx/test-js-action@v0.1.1
         with:
           who-to-greet: 'Mona the Octocat'
       # Use the output from the `hello` step
