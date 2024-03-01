@@ -14,7 +14,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3.5.2
       - name: Checkmarx AST CLI Action
-        uses: checkmarx/ast-github-action@2.0.18
+        uses: checkmarx/ast-github-action@75a1d77169240b76e9e0bce6ea2ac33a3f7f0229 # Version updatd to use version 2.0.69 of the CxOne CLI
         with:
           additional_params: --report-format sarif
           base_uri: https://anz.ast.checkmarx.net/
