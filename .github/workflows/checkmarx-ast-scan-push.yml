@@ -17,7 +17,10 @@ jobs:
       - name: Checkmarx AST CLI Action
         uses: checkmarx/ast-github-action@75a1d77169240b76e9e0bce6ea2ac33a3f7f0229 # Version updatd to use version 2.0.69 of the CxOne CLI
         with:
-          who-to-greet: 'Mona the Octocat'
+          base_uri: https://anz.ast.checkmarx.net/
+          cx_tenant: ${{ secrets.CX_TENANT_NAME }}
+          cx_client_id: ${{ secrets.CX_CLIENT_ID }}
+          cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
