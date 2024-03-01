@@ -7,6 +7,7 @@ import xml.sax
 # High: OS_Access_Violation
 path = sys.stdin.readline()[:-1]
 os.remove(path)
+os.rmdir(path)
 
 # Medium
 class TestHandler(xml.sax.ContentHandler):
