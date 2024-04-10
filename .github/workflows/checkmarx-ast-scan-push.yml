@@ -19,6 +19,9 @@ jobs:
         with:
           additional_params: --report-format sarif
           base_uri: https://anz.ast.checkmarx.net/
+          cx_tenant: ${{ secrets.CX_TENANT_NAME }}
+          cx_client_id: ${{ secrets.CX_CLIENT_ID }}
+          cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
       - name: Upload SARIF File
         uses: github/codeql-action/upload-sarif@v2
         with:
