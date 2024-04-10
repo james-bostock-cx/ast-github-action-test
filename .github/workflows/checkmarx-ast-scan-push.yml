@@ -8,20 +8,16 @@ on:
       - main
 
 jobs:
-  build:
+  hello_world_job:
     runs-on: ubuntu-latest
+    name: A job to say hello
     steps:
       - name: Checkout
         uses: actions/checkout@v3.5.2
       - name: Checkmarx AST CLI Action
-        uses: checkmarx/ast-github-action@2.0.20
+        uses: checkmarx/ast-github-action@2.0.24
         with:
-          additional_params: --report-format sarif
-          base_uri: https://anz.ast.checkmarx.net/
-          cx_tenant: cx_ps_apac_test_james_bostock
-          cx_client_id: ${{ secrets.CX_CLIENT_ID }}
-          cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
-      - name: Upload SARIF file
-        uses: github/codeql-action/upload-sarif@v2
-        with:
-          sarif_file: cx_result.sarif
+          who-to-greet: 'Mona the Octocat'
+      # Use the output from the `hello` step
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
