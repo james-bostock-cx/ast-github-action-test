@@ -17,7 +17,9 @@ jobs:
       - name: Checkmarx AST CLI Action
         uses: checkmarx/ast-github-action@2.0.24
         with:
-          who-to-greet: 'Mona the Octocat'
-      # Use the output from the `hello` step
-      - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
+          additional_params: --report-format sarif
+          base_uri: https://anz.ast.checkmarx.net/
+      - name: Upload SARIF File
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: cx_result.sarif
