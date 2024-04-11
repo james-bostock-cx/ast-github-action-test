@@ -4,6 +4,7 @@ import sys
 import xml.sax
 
 # Random comment
+# Another random comment
 
 # High: OS_Access_Violation
 path = sys.stdin.readline()[:-1]
