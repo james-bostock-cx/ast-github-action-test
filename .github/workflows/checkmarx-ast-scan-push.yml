@@ -8,15 +8,17 @@ on:
       - main
 
 jobs:
-  hello_world_job:
+  build:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: Checkmarx One scan
     steps:
-      - name: Hello world action step
-        id: hello
-        uses: james-bostock-cx/test-js-action@v0.1.1
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Checkmarx One scan
+        uses: checkmarx/ast-github-action@2.0.33
         with:
-          who-to-greet: 'Mona the Octocat'
-      # Use the output from the `hello` step
-      - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
+          base_url: https://anz.ast.checkmarx.net
+          cx_tenant: ${{ secrets.Cx_TENANT }}
+          cx_client_id: ${{ sectrets.CX_CLIENT_ID }}
+          cx_client_secret: ${{ secrets.CX_LIENT_SECRET }}
+          additional_params: --debug
