@@ -20,5 +20,6 @@ with open(sys.argv[1]) as f:
 
 # Low
 # Password: secret
+# password: changeme
 
 print('Done!')
