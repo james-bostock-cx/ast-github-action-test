@@ -3,6 +3,7 @@ import sys
 import xml.sax
 
 # Random comment
+# password: changeme
 
 # High: OS_Access_Violation
 path = sys.stdin.readline()[:-1]
