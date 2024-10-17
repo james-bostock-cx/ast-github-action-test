@@ -18,6 +18,7 @@ jobs:
         uses: checkmarx/ast-github-action@2.0.36
         with:
           base_uri: https://anz.ast.checkmarx.net
+          cx_tenant: ${{ secrets.CX_TENANT_NAME }}
           cx_client_id: ${{ secrets.CX_CLIENT_ID }}
           cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
           additional_params: --debug
