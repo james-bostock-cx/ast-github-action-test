@@ -13,12 +13,11 @@ jobs:
     name: Checkmarx One scan
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Checkmarx One scan
-        uses: checkmarx/ast-github-action@2.0.33
+        uses: checkmarx/ast-github-action@2.0.36
         with:
           base_uri: https://anz.ast.checkmarx.net
-          cx_tenant: ${{ secrets.Cx_TENANT_NAME }}
           cx_client_id: ${{ secrets.CX_CLIENT_ID }}
           cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
           additional_params: --debug
